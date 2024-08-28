@@ -1,0 +1,255 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Potato Disease Detection{% endblock %}
+
+{% block content %}
+<div class="container mt-5"> <!-- Add mt-5 (or any desired margin top) to create space from the navbar -->
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Upload Image</h5>
+                    <p class="card-text">Upload an image of a potato plant to detect diseases.</p>
+                    <form method="POST" action="/upload_image/" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="file" name="image" accept="image/*" class="form-control mb-3" id="imageUpload">
+                        <div id="imagePreviewContainer" class="mt-3">
+                            <img id="imagePreview" src="#" alt="Preview" style="display: none; max-width: 100%; height: 200px;">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Real-time Detection</h5>
+                    <p class="card-text">Detect potato diseases in real-time using your device's camera.</p>
+                    <p class="card-text">Instructions:</p>
+                    <ol class="card-text">
+                        <li>Click the "Start Detection" button below.</li>
+                        <li>Allow access to your device's camera.</li>
+                        <li>Hold the camera over a potato plant to scan for diseases.</li>
+                        <li>Wait for the detection results to appear.</li>
+                    </ol>
+                    <a href="{% url 'realtime_detection' %}" class="btn btn-primary">Start Detection</a>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this section to display prediction results or error message -->
+    {% if class %}
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Prediction Result</h5>
+                    <p class="card-text">Predicted Class: {{ class }}</p>
+                    <p class="card-text">Confidence: {{ confidence }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if error %}
+    <div class="row mt-4">
+        <div class="col">
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<div style="background-color: white;">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card">
+            <img src="/media/early.jpg" class="card-img-top" alt="Image of Early Blight">
+            <div class="card-body">
+                <h5 class="card-title">Early Blight</h5>
+                <p class="card-text">Early Blight is caused by Alternaria solani, a fungal pathogen. It can be managed by removing and destroying infected plant debris, using fungicides, and ensuring proper spacing to reduce humidity.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="/media/late.jpg" class="card-img-top" alt="Image of Late Blight">
+            <div class="card-body">
+                <h5 class="card-title">Late Blight</h5>
+                <p class="card-text">Late Blight is caused by Phytophthora infestans, a fungus-like pathogen. It can be managed by using resistant potato varieties, applying fungicides, and practicing crop rotation.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="/media/healthy.jpg" class="card-img-top" alt="Image of Healthy Potato">
+            <div class="card-body">
+                <h5 class="card-title">Healthy</h5>
+                <p class="card-text">A healthy potato crop requires proper crop management and disease prevention practices. Regular monitoring, balanced fertilization, and the use of disease-free seed potatoes are essential.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="classification-use-section mb-4">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card p-4">
+          <div class="card-body">
+            <h5 class="card-title">Use of the Classification</h5>
+            <p class="card-text">
+              Our potato disease classification tool is designed to assist farmers in quickly and accurately identifying common potato diseases. By using this tool, farmers can:
+            </p>
+            <ul class="card-text">
+              <li>Receive immediate feedback on the health of their potato crops.</li>
+              <li>Make informed decisions about disease management and treatment.</li>
+              <li>Minimize crop loss and maximize yield by addressing issues promptly.</li>
+              <li>Reduce the reliance on chemical treatments by identifying diseases early.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+      <div class="causes-solutions-section mb-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card p-4">
+                <div class="card-body">
+                  <h5 class="card-title">Causes and Solutions</h5>
+                  <p class="card-text">
+                    Understanding the causes of potato diseases is crucial for effective management. Below are the three key classifications, their causes, and suggested solutions:
+                  </p>
+                  <ul class="card-text">
+                    <li><strong>Early Blight</strong>
+                      <ul>
+                        <li><em>Cause:</em> Alternaria solani, a fungal pathogen.</li>
+                        <li><em>Solution:</em> Remove and destroy infected plant debris, use fungicides, and ensure proper spacing to reduce humidity.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Late Blight</strong>
+                      <ul>
+                        <li><em>Cause:</em> Phytophthora infestans, a fungus-like pathogen.</li>
+                        <li><em>Solution:</em> Use resistant potato varieties, apply fungicides, and practice crop rotation.</li>
+                      </ul>
+                    </li>
+                    <li><strong>Healthy</strong>
+                      <ul>
+                        <li><em>Cause:</em> Proper crop management and disease prevention practices.</li>
+                        <li><em>Solution:</em> Regular monitoring, balanced fertilization, and use of disease-free seed potatoes.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-us-section">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card p-4">
+                  <div class="card-body">
+                    <h5 class="card-title">About Us</h5>
+                    <p class="card-text">
+                      Welcome to our Potato Disease Classification project! Our goal is to leverage advanced machine learning techniques to help farmers and agricultural professionals identify and manage potato diseases effectively. Our system uses state-of-the-art image classification models to detect various diseases in potato crops, providing accurate and timely diagnosis to prevent crop loss and ensure healthy yields.
+                    </p>
+                    <p class="card-text">
+                      Our team is composed of experts in machine learning, agriculture, and software development, all working together to create an easy-to-use and efficient tool for potato disease management. We are committed to continuous improvement and innovation, striving to provide the best solutions for the agricultural community.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Function to preview image before uploading
+    function previewImage(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').attr('src', e.target.result);
+                $('#imagePreview').show();
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    // Trigger preview when a file is selected
+    $("#imageUpload").change(function() {
+        previewImage(this);
+    });
+</script>
+
+<style>
+    #imagePreview {
+        display: none;
+        max-width: 200px; /* Set maximum width */
+        height: 100px; /* Maintain aspect ratio */
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script async src="https://docs.opencv.org/master/opencv.js" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/opencv.js/4.5.3/opencv.js"></script>
+</head>
+<script>
+    // Function to preview image before uploading
+    function previewImage(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').attr('src', e.target.result);
+                $('#imagePreview').show();
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    // Trigger preview when a file is selected
+    $("#imageUpload").change(function() {
+        previewImage(this);
+    });
+
+    document.getElementById('startDetectionBtn').addEventListener('click', async () => {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            const videoElement = document.getElementById('videoElement');
+            videoElement.srcObject = stream;
+            document.getElementById('cameraOutput').style.display = 'block';
+
+            videoElement.onloadedmetadata = () => {
+                videoElement.play();
+                const cap = new cv.VideoCapture(videoElement);
+                const mat = new cv.Mat(videoElement.height, videoElement.width, cv.CV_8UC4);
+
+                function processVideo() {
+                    try {
+                        cap.read(mat);
+                        cv.imshow('canvasOutput', mat);
+                        // Your detection logic here
+
+                        requestAnimationFrame(processVideo);
+                    } catch (err) {
+                        console.error('Error processing frame:', err);
+                        requestAnimationFrame(processVideo);
+                    }
+                }
+                requestAnimationFrame(processVideo);
+            };
+        } catch (err) {
+            console.error('Error accessing camera:', err);
+        }
+    });
+</script>
+{% endblock %}
