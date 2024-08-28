@@ -23,48 +23,20 @@ CropWatch is a web-based application designed to detect diseases in potato plant
 ## Setup Instructions
 
 ### Step 1: Download or Clone the Project
-Clone the repository from GitHub to your local machine:
-```bash
-git clone https://github.com/Mousami7/Potato-Plant-Disease-Detection-using-CNN.git
-```
+
 ### Step 2: Navigate to the Project Directory
 Change directory to the project folder:
 
-```bash
-cd Potato-Plant-Disease-Detection-using-CNN
-```
-
-Step 3: Create a Virtual Environment
-Create a virtual environment:
-
-```bash
-python -m venv env
-```
-
-Step 4: Activate the Virtual Environment
-Activate the virtual environment:
-
-On Windows:
-```bash
-env\Scripts\activate
-```
-
-Step 5: Install Project Dependencies
+### Step 3: Install Project Dependencies
 Install the required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-Step 6: Check Project Directory
+Step 4: Check Project Directory
 Ensure you are in the directory that contains the manage.py file. If not, navigate to that directory:
 ```bash
 cd 'path/to/the/project/folder/consisting/manage.py'
-```
-
-Step 7: Apply Migrations
-Apply the database migrations:
-```bash
-python manage.py migrate
 ```
 
 Step 8: Run the Development Server
