@@ -33,19 +33,19 @@ Install the required dependencies:
 pip install -r requirements.txt
 ```
 
-Step 4: Check Project Directory
+### Step 4: Check Project Directory
 Ensure you are in the directory that contains the manage.py file. If not, navigate to that directory:
 ```bash
 cd 'path/to/the/project/folder/consisting/manage.py'
 ```
 
-Step 8: Run the Development Server
+Step 5: Run the Development Server
 Start the development server:
 ```bash
 python manage.py runserver
 ```
 
-Step 9: Access the Application
+Step 6: Access the Application
 Open your Chrome browser and go to: http://localhost:8000
 
 
