@@ -47,13 +47,13 @@ Install the required dependencies:
 pip install -r requirements.txt
 ```
 
-## Step 5: Check Project Directory
+# Step 5: Check Project Directory
 Ensure you are in the directory that contains the manage.py file. If not, navigate to that directory:
 ```bash
 cd 'path/to/the/project/folder/consisting/manage.py'
 ```
 
-## Step 6: Run the Development Server
+# Step 6: Run the Development Server
 
 ![4](https://github.com/user-attachments/assets/9f33ae68-7c1c-4d45-8b73-d2bc436c513b)
 
@@ -63,7 +63,7 @@ on command prompt write the following command and Start the development server:
 python manage.py runserver
 ```
 
-## Step 7: Access the Application
+# Step 7: Access the Application
 
 ![5](https://github.com/user-attachments/assets/98e021ae-f08c-46bd-a1ee-9d3b060e333d)
 
@@ -77,6 +77,7 @@ Open your Chrome browser and go to: http://localhost:8000
 3.Open google chrome and type "localhost:8000
 
 ## Usage
+**To upload images to test : you can find test images from test folder**
 - **Upload Image:** Go to the home page and upload an image of a potato plant. The system will process the image and display the disease detection results.
 ![UploadImage](https://github.com/user-attachments/assets/76419598-dc31-44e6-81df-43d6dd2eb25e)
 
