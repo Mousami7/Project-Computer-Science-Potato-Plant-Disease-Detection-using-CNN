@@ -22,28 +22,46 @@ CropWatch is a web-based application designed to detect diseases in potato plant
 
 ## Setup Instructions
 
-### Step 1: Download or Clone the Project
 
-### Step 2: Navigate to the Project Directory
-Change directory to the project folder:
+# Step 1: Download or Clone the Project
+![1](https://github.com/user-attachments/assets/7799b3e6-44b9-4839-b7b2-f19a53742f42)
 
-### Step 3: Install Project Dependencies
+# Step 2: Navigate to the Project Directory
+
+Once the project is downloaded:
+Using File Explorer:
+Open File Explorer and navigate to the folder where the project was downloaded or extracted (e.g., C:\Users\YourUsername\Downloads\Project-Computer-Science-Potato-Plant-Disease-Detection-using-CNN).
+
+![2](https://github.com/user-attachments/assets/002a2bfa-ae89-4e1d-8c62-89c51b288b8a)
+
+## 3. Open Command Prompt from the Project Directory
+To open Command Prompt from the project directory:
+Using File Explorer:
+Open the project folder in File Explorer.
+In the address bar, type cmd and press Enter.
+![3](https://github.com/user-attachments/assets/61bc0cc6-a9a9-4619-a341-deb2f9c9a120)
+
+# Step 4: Install Project Dependencies
 Install the required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+![4](https://github.com/user-attachments/assets/9f33ae68-7c1c-4d45-8b73-d2bc436c513b)
 
-### Step 4: Check Project Directory
+## Step 5: Check Project Directory
 Ensure you are in the directory that contains the manage.py file. If not, navigate to that directory:
 ```bash
 cd 'path/to/the/project/folder/consisting/manage.py'
 ```
+![5](https://github.com/user-attachments/assets/98e021ae-f08c-46bd-a1ee-9d3b060e333d)
 
 Step 5: Run the Development Server
-Start the development server:
+After installing all dependencies, start the development server by running:
+on command prompt write the following command and Start the development server:
 ```bash
 python manage.py runserver
 ```
+
 
 Step 6: Access the Application
 Open your Chrome browser and go to: http://localhost:8000
