@@ -77,7 +77,7 @@ Open your Chrome browser and go to: http://localhost:8000
 3.Open google chrome and type "localhost:8000
 
 ## Usage
-**To upload images to test : you can find test images from test folder**
+**To upload images to test : you can find test images from "test" folder**
 - **Upload Image:** Go to the home page and upload an image of a potato plant. The system will process the image and display the disease detection results.
 ![UploadImage](https://github.com/user-attachments/assets/76419598-dc31-44e6-81df-43d6dd2eb25e)
 
