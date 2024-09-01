@@ -1,7 +1,7 @@
 # CropWatch: Revolutionizing Precision Farming with CNNs
 CropWatch is a web-based application designed to detect diseases in potato plants using machine learning techniques. The application allows users to upload images of potato plants for disease prediction and provides real-time detection capabilities using a camera.
 
-![Screenshot 2024-08-20 142252](https://github.com/user-attachments/assets/183bccf9-9446-481c-b7d0-4bae7d9dcf54)
+![Screenshot 2024-08-20 142252](https://github.com/user-attachments/assets/aaf9b3bb-dd3f-4aa8-8cbe-f453d9feffef)
 
 ## Features
 - Image upload for disease detection
